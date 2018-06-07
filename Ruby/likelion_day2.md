@@ -168,19 +168,50 @@ a = "#{name}님 안녕하세요"
 => "Schang2님 안녕하세요"
 ~~~
 
+~~~ ruby
+my_name = "Jo Yong Won"
+=> "Jo Yong Won"
+my_name.upcase
+=> "JO YONG WON"
+my_name
+=> "Jo Yong Won"
+my_name.upcase!
+=> "JO YONG WON"
+my_name
+=> "JO YONG WON"
+~~~
 
+### 10. hash
 
-
-
-
-
-### class 만드는 법
+- key, value 로 이루어져 있다.
 
 ~~~ ruby
-class Integer
-def dollar
-self*1100
-end  
-end  
+hash = { :key => value }
+hash2 = { key: value }
+hash3 = { "key" => value }
 ~~~
+
+- each 반복하기
+
+- ~~~ruby
+  hash1 = { name: "5chang2", :age => 27, "hometown" => "GJ"}
+  => {:name=>"5chang2", :age=>27, "hometown"=>"GJ"}
+  
+  hash1.each do |k,v|	# k,v는 어떠한 문자로 적어도 된다.
+    puts "#{k} : #{v}"
+  end
+  name : 5chang2
+  age : 27
+  hometown : GJ
+  ~~~
+
+
+
+### 11. 추가정보
+
+- https://gist.github.com/nacyot/7624036
+
+
+
+
 
