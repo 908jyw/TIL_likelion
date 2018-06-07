@@ -108,7 +108,67 @@ end
   => :divide
   ~~~
 
-- 
+- 기본 매개변수
+
+- ~~~ruby
+  def factorial(n)
+      n == 0 ? 1: n * factorial(n-1)
+  end
+  factorial # ArgumentError: wrong number of arguments (given 0, expected 1)
+  
+  
+  # 기본 매개변수 등록
+  def factorial_d(n=5)
+      n == 0 ? 1: n * factorial(n-1)
+  end
+  factorial_d # 120
+  ~~~
+
+
+
+### 8. block
+
+~~~ruby
+3.times { puts "hello" }
+3.times do |asdf|
+  puts asdf	# 이부분이 block
+end
+0
+1
+2
+~~~
+
+~~~ ruby
+def hihi
+    return "No block" unless block_given?
+    yield
+end
+
+hihi # => "No block"
+hihi {puts "hihi"} #=> hihi
+
+~~~
+
+### 9. String
+
+~~~ ruby
+a = "안녕하세요. \n 멋사입니다."
+=> "안녕하세요. \n 멋사입니다."
+b = '안녕하세요. \n 멋사입니다.'                                                                                
+puts a
+안녕하세요. 
+ 멋사입니다.
+=> nil
+puts b
+안녕하세요. \n 멋사입니다.
+=> nil
+name = "Schang2"
+=> "Schang2"
+a = "#{name}님 안녕하세요"                                              
+=> "Schang2님 안녕하세요"
+~~~
+
+
 
 
 
